@@ -9,6 +9,7 @@ from sklearn.preprocessing import OneHotEncoder
 import pandas as pd
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
+from sklearn.metrics import f1_score
 
 def clean_data(data):
     # Dict for cleaning data
@@ -55,17 +56,23 @@ def main():
     # Data is located at:
     # "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
-    ds = ### YOUR CODE HERE ###
+    # ds = ### YOUR CODE HERE ###
+    csv_path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+    ds = TabularDatasetFactory.from_delimited_files(csv_path)
     
     x, y = clean_data(ds)
 
     # TODO: Split data into train and test sets.
 
     ### YOUR CODE HERE ###a
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 2025)
 
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
     accuracy = model.score(x_test, y_test)
+    y_pred = model.predict(X=x_test)
+    F1_score = f1_score(y_test, y_pred)
+    run.log("F1_score", np.float(F1_score))
     run.log("Accuracy", np.float(accuracy))
 
 if __name__ == '__main__':
