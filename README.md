@@ -26,7 +26,7 @@ This model is then compared to an Azure AutoML run.
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
 Pipeline Flow chart:
-![AutoML_Udacity_Course2_project](https://github.com/user-attachments/assets/64ad453b-4d06-4a60-932f-768e856a144b)
+![AutoML_Udacity_Course2_project](https://github.com/mishra-atul5001/nd00333_AZMLND_Optimizing_a_Pipeline_in_Azure-Starter_Files/blob/master/AutoML%20Udacity%20Course2%20project.jpg)
 
 - `Data`:
   - Data Ingestion: Data ingested using 'Dataset' class using a https-request.
