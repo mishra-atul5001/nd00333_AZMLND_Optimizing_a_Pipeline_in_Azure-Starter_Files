@@ -95,3 +95,9 @@ Accuracy: 0.9147192716236723
 **Image of cluster marked for deletion**
 Performed the cleanup using `clsuter.delete` in notebook: [udacity-project_AUC_weighted_metric](https://github.com/mishra-atul5001/nd00333_AZMLND_Optimizing_a_Pipeline_in_Azure-Starter_Files/blob/master/udacity-project_AUC_weighted_metric.ipynb)
 
+***
+## Suggestions to Make Your Project Stand Out
+1. Include a diagram of your pipeline architecture. ✅
+2. Export your model and run it in Cloud Shell. In-Progress ⏳
+3. Extend your AutoML config to include more parameters. ✅
+4. Have your code check for existing compute clusters before creating a new one. ✅
